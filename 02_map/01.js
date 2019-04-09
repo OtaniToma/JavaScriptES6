@@ -4,8 +4,8 @@ var images = [
   { height: '83px', width: '75px' },
 ];
 
-var heights = images.map(function(height) {
-    return height.height;
+var heights = images.map(function(image) {
+    return image.height;
 });
 
 heights;
