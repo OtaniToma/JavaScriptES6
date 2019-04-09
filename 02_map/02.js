@@ -4,8 +4,8 @@ var trips = [
   { distance: 59, time: 25 }
 ];
 
-var speeds = trips.map(function(speed) {
-    return speed.distance / speed.time;
+var speeds = trips.map(function(trip) {
+    return trip.distance / trip.time;
 });
 
 speeds;
