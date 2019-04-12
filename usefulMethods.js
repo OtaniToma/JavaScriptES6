@@ -1,4 +1,4 @@
-// 012 - every
+// every
 var users = [
   { id: 21, hasSubmitted: true },
   { id: 62, hasSubmitted: false },
@@ -13,7 +13,7 @@ hasSubmitted;
 
 
 
-// 013 - some
+// some
 var requests = [
   { url: '/photos', status: 'complete' },
   { url: '/albums', status: 'pending' },
@@ -25,3 +25,18 @@ var inProgress = requests.some(function(request) {
 });
 
 inProgress;
+
+
+
+// reduce
+function balancedParens(string) {
+  return !string.split('').reduce(function(previous, char) {
+    if (previous < 0) { return previous; }
+    if (char === '(') { return previous + 1; }
+    if (char === ')') { return previous - 1; }
+  }, 0); 
+}
+
+balancedParens('((()))'); // true
+balancedParens('((())'); // false
+balancedParens(')('); // false
