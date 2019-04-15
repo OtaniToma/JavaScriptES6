@@ -83,3 +83,62 @@ for (let i = 0; i < statuses.length; i++) {
   }
 }
 
+
+// テンプレートリテラル
+function doubleMessage(number) {
+  return `${number}を2倍すると${2 * number}になります`;
+}
+
+function fullName(firstName, lastName) {
+  return `${firstName} ${lastName}`;
+}
+
+
+// アロー関数
+// const fibonacci = function(n) {
+const fibonacci = (n) => {
+  if (n < 3) return 1;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+fibonacci(10);
+
+
+// const profile = {
+//     name: '太郎'
+// };
+
+const profile = {
+    name: '太郎',
+    getName: function() {
+        return this.name;
+    }
+};
+
+
+
+// オブジェクトリテラル
+function createBookShop(inventory) {
+  return {
+    // inventory: inventory,　キーとバリューが同じ場合は1回でOK
+    inventory,
+    // inventoryValue: function() {　バリューがfunctionの場合は消してOK
+    inventoryValue() {
+      return this.inventory.reduce((total, book) => total + book.price, 0);
+    },
+    priceForTitle: function(title) {
+      return this.inventory.find(book => book.title === title).price;
+    }
+	};
+}
+
+const inventory = [
+  { title: 'Harry Potter', price: 1000 },
+  { title: 'JS入門', price: 1500 }
+ ];
+
+const bookShop = createBookShop(inventory);
+
+bookShop.inventoryValue();
+'---'
+bookShop.priceForTitle('Harry Potter');
