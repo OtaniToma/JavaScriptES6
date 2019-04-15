@@ -104,6 +104,7 @@ const fibonacci = (n) => {
 fibonacci(10);
 
 
+
 // const profile = {
 //     name: '太郎'
 // };
@@ -142,3 +143,69 @@ const bookShop = createBookShop(inventory);
 bookShop.inventoryValue();
 '---'
 bookShop.priceForTitle('Harry Potter');
+
+
+
+function saveFile(url, data) {
+  // $.ajax({ method: 'POST', url: url, data: data });
+     $.ajax({ 
+       url, 
+       data,
+       method: 'POST'
+     });
+}
+
+const url = 'http://fileupload.com';
+const data = { color: 'red' };
+
+saveFile(url, data);
+
+
+
+const red = '#ff0000';
+const blue = '#0000ff';
+
+const COLORS = { red, blue };
+
+
+
+const fields = ['firstName', 'lastName', 'phoneNumber'];
+      
+const props = { fields };
+
+
+
+const canvasDimensions = (width, initialHeight) => {
+  const height = initialHeight * 9 /16;
+  return { 
+    width, 
+    height 
+  };
+}
+
+
+
+const color = 'red';
+
+// const Car = {
+//   color: color,
+//   drive: function() {
+//     return 'ブーーン!';
+//   },
+//   getColor: function() {
+//     return this.color;
+//   }
+// };
+
+const Car = {
+  color,
+  drive: () => {
+    return 'ブーーン!';
+  },
+  getColor: () => {
+    return color;
+  }
+};
+
+Car.drive();
+Car.getColor();
