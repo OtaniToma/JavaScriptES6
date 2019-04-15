@@ -209,3 +209,56 @@ const Car = {
 
 Car.drive();
 Car.getColor();
+
+
+
+// 関数のデフォルト引数の設定
+function makeAjaxRequest(url, method = 'GET') {
+  return method;
+}
+  
+  // ajaxリクエストをするロジックがここにあると想定
+
+makeAjaxRequest('google.com');
+makeAjaxRequest('google.com', 'POST');
+makeAjaxRequest('google.com', null); // nullで意図的に空にする
+makeAjaxRequest('google.com', undefined); // undefinedならデフォルトに
+
+
+
+// function sum(a, b) {
+//   if (a === undefined) {
+//     a = 0; 
+//   }
+//   
+//   if (b === undefined) {
+//     b = 0; 
+//   }
+//   
+//   return a + b;
+// }
+
+function sum(a = 0, b = 0) {
+  return a + b;
+}
+
+sum(1, 2);
+
+
+
+// function addOffset(style) {
+//   if (!style) {
+//    style = {}; 
+//   }
+//   
+//   style.offset = '10px';
+//   
+//   return style;
+// }
+
+function addOffset(style = {}) {
+  style.offset = '10px';
+  return style;
+}
+
+addOffset();
