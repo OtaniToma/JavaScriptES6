@@ -262,3 +262,17 @@ function addOffset(style = {}) {
 }
 
 addOffset();
+
+
+// Rest演算子とSpread演算子
+const MathLibrary = {
+  calcProduct(...rest) {
+    return this.multiply(...rest);
+  },
+  multiply(a, b) {
+    return a *b ;
+  }
+};
+
+MathLibrary.calcProduct(2, 3);
+MathLibrary.multiply(2, 3);
